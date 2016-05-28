@@ -1,0 +1,28 @@
+{
+  "name": "message",
+  "version": "0.1.1",
+  "description": "my ",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soarpatriot/minif.git"
+  },
+  "keywords": [
+    "functional",
+    "program",
+    "library"
+  ],
+  "author": "Soar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soarpatriot/minif/issues"
+  },
+  "homepage": "https://github.com/soarpatriot/minif#readme",
+  "dependencies": {
+    "socket.io": "^1.4.5",
+    "tracer": "^0.8.3"
+  }
+}

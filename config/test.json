@@ -1,0 +1,11 @@
+
+
+{
+  "uid": "messages",
+  "script": "app.js",
+  "watch": true,
+  "append": true,
+  "pidFile": "/data/www/messages/shared/tmp/pids/appliction.pid",
+  "sourceDir": "/data/www/messages/current",
+  "args": ["--port", "5566"]
+}
