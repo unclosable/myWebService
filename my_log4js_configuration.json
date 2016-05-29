@@ -1,0 +1,13 @@
+{
+  "appenders": [
+    {
+      "type": "datefile",
+      "filename": "log_file",
+      "pattern": "-yyyy-MM-dd-hh.log",
+      "maxLogSize": 20480,
+      "backups": 3,
+	  "alwaysIncludePattern": true,
+      "category": "relative-logger"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "message",
+  "name": "my",
   "version": "0.1.1",
   "description": "my ",
   "main": "app.js",
@@ -23,6 +23,8 @@
   "homepage": "https://github.com/soarpatriot/minif#readme",
   "dependencies": {
     "socket.io": "^1.4.5",
-    "tracer": "^0.8.3"
-  }
+    "log4js":"^0.6.36"
+  },
+  "devDependencies": {},
+  "readmeFilename": "README.md"
 }

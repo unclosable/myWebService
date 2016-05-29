@@ -1,27 +1,20 @@
 
 var port = process.env.PORT || 5566;
-var logger = require('tracer').console();
+var log4js = require('log4js');
+log4js.configure('my_log4js_configuration.json', { cwd: './log' });
+var logger = log4js.getLogger('relative-logger');
 var server = require('http').createServer();
 var io = require('socket.io')(server);
 var overCount  = 0;
 io.on('connection', function(socket){
-  
-  socket.on('overtimes',function(data){
-    logger.info('overtimes: '+ data);
-    overCount = data;
-    socket.broadcast.emit('overtimes',data); 
-  })
-  socket.on('overtimes_new',function(data){
-    logger.info('overtimes_new: '+ data);
-    socket.broadcast.emit('overtimes_new',data); 
-  })
-  socket.on('event', function(data){
-    logger.info('event data: '+ data);
-  });
+  logger.info('<CONNECT>'+socket.id);
   socket.on('disconnect', function(){
-    logger.warn('disconnect socket io server');
+    logger.info('<DISCONNECT>'+socket.id);
   });
-  socket.emit('overtimes',overCount); 
+  socket.on('message',function(data){
+    logger.info('<MESSAGE>'+socket.id+'#'+data);
+    socket.emit('message',data);
+  });
 });
 server.listen(port);
-logger.info('server started at: '+ port);
+logger.info('<SERVET START AT>'+ port);
