@@ -27,7 +27,7 @@ set :format, :pretty
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('node_modules','tmp/pids')
+set :linked_dirs, fetch(:linked_dirs, []).push('node_modules','tmp/pids','log')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -47,6 +47,7 @@ namespace :deploy do
       within current_path do
         unless test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> start"
+          # execute :mkdir, 'log'
           execute :forever, 'start app.js'
         else 
           error ">>>>>> already started"
@@ -61,7 +62,7 @@ namespace :deploy do
       within current_path do
         if test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> stop"
-          execute :forever, 'stopall'
+          execute :forever, ' stopall'
           execute :rm,"#{fetch(:app_pid)}"
         end 
       end
