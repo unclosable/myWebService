@@ -3,7 +3,7 @@
 {
   "uid": "myWebService",
   "script": "app.js",
-  "watch": true,
+  "watch": false,
   "append": true,
   "pidFile": "/mnt/myWebService/shared/tmp/pids/appliction.pid",
   "sourceDir": "/mnt/myWebService/current",
