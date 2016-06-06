@@ -1,11 +1,11 @@
 
 
 {
-  "uid": "messages",
+  "uid": "myWebService",
   "script": "app.js",
   "watch": true,
   "append": true,
-  "pidFile": "/data/www/messages/shared/tmp/pids/appliction.pid",
-  "sourceDir": "/data/www/messages/current",
+  "pidFile": "/mnt/myWebService/shared/tmp/pids/appliction.pid",
+  "sourceDir": "/mnt/myWebService/current",
   "args": ["--port", "5566"]
 }

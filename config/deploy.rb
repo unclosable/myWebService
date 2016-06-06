@@ -62,7 +62,7 @@ namespace :deploy do
       within current_path do
         if test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> stop"
-          execute :forever, ' stopall'
+          execute :forever, 'stop app.js'
           execute :rm,"#{fetch(:app_pid)}"
         end 
       end
@@ -72,4 +72,5 @@ namespace :deploy do
 
 
 end
-after "deploy:publishing", "deploy:restart"
+before "deploy:publishing", "deploy:stop"
+after "deploy:publishing", "deploy:start"
