@@ -47,8 +47,8 @@ namespace :deploy do
       within current_path do
         unless test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> start"
-          # execute :mkdir, 'log'
-          execute :forever, 'start app.js'
+          execute :touch ,"#{fetch(:app_pid)}"
+          execute :forever, 'start ./config/test.json'
         else 
           error ">>>>>> already started"
         end 
@@ -62,8 +62,7 @@ namespace :deploy do
       within current_path do
         if test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> stop"
-          execute :forever, 'stop app.js'
-          execute :rm,"#{fetch(:app_pid)}"
+          execute :forever, 'stop myWebService'
         end 
       end
     end
