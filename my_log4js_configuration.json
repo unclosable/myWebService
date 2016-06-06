@@ -1,7 +1,7 @@
 {
   "appenders": [
     {
-      "type": "datefile",
+      "type": "dateFile",
       "filename": "log_file",
       "pattern": "-yyyy-MM-dd-hh.log",
       "maxLogSize": 20480,

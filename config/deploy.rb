@@ -1,9 +1,9 @@
 
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
-set :application, 'messages'
-set :repo_url, 'git@git.rfdoa.cn:java/messages.git'
+set :application, 'myWebService'
+set :repo_url, 'https://github.com/unclosable/myWebService.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -47,7 +47,7 @@ namespace :deploy do
       within current_path do
         unless test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> start"
-          execute :forever, 'start ./config/test.json'
+          execute :forever, 'start app.js'
         else 
           error ">>>>>> already started"
         end 
@@ -61,7 +61,8 @@ namespace :deploy do
       within current_path do
         if test("[ -f #{fetch(:app_pid)} ]")
           info ">>>>> stop"
-          execute :forever, 'stop messages'
+          execute :forever, 'stopall'
+          execute :rm,"#{fetch(:app_pid)}"
         end 
       end
     end
