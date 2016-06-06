@@ -13,7 +13,7 @@ io.on('connection', function(socket){
   });
   socket.on('message',function(data){
     logger.info('<MESSAGE>'+socket.id+'#'+data);
-    socket.emit('message',data);
+    socket.broadcast.emit('message',data);
   });
 });
 server.listen(port);
