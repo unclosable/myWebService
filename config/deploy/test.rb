@@ -2,9 +2,9 @@ set :stage, :test
 
 set :profile, "test"
 
-set :deploy_to, "/mnt/myWebService"
+set :deploy_to, "/opt/myWebService"
 
-set :server_name, "139.129.12.185"
+set :server_name, "43.241.234.241"
 
 set :branch, "master"
 
