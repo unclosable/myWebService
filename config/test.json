@@ -1,11 +1,9 @@
-
-
 {
-  "uid": "myWebService",
-  "script": "app.js",
-  "watch": false,
-  "append": true,
-  "pidFile": "/mnt/myWebService/shared/tmp/pids/appliction.pid",
-  "sourceDir": "/mnt/myWebService/current",
-  "args": ["--port", "5566"]
+    "uid": "myWebService",
+    "script": "app.js",
+    "watch": false,
+    "append": true,
+    "pidFile": "/opt/myWebService/shared/tmp/pids/appliction.pid",
+    "sourceDir": "/opt/myWebService/current",
+    "args": ["--port", "5566"]
 }
